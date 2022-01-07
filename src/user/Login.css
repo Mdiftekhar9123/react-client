@@ -1,0 +1,30 @@
+.Textfield{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: deepskyblue;
+
+}
+
+.button {
+    padding: 12px 20px 12px 20px;
+    margin-left: 190px;
+    background-color: rgb(16, 17, 17);
+    display: inline-block;
+
+}
+.form {
+    padding-left: 350px;
+    padding-top: 50Px;
+}
+.heading{
+    padding-right: 50%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    font-size: 25px;
+    text-align: center;
+    font-family: cursive;
+    font-style:oblique;
+    color: rgb(22, 21, 21);
+}
