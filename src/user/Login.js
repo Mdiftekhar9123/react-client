@@ -50,10 +50,38 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const emailValidation = () => {
+      let REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(email.match(REGEX)){
+          return true;
+      }
+      return false;
+  }
+   
+  const passwordValidation = () => {
+      let REGEX = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$";
+      if(password.match(REGEX)) {
+        return true;
+      } 
+      else {
+        return false;
+      }
+    }
+
     const onSubmit = () => {
-      window.alert("email: "+ email + "  password: " + password)
-      setEmail('');
-      setPassword('');
+      let emal = emailValidation();
+      let pass = passwordValidation();
+      if(!emal) {
+        alert('Email is not Valid and not proper format')
+      }
+      else if(!pass) {
+        alert('Password is not Valid because minumum six inputs are allowed. ')
+      }
+      else {
+        window.alert("email:"+ email + "  password: " + password);
+        setEmail('');
+        setPassword('');
+        } 
     }
     return(
     <div className = 'form'>
@@ -62,9 +90,11 @@ const Login = () => {
       <FormLayout>
       <div className = 'Textfield'>
           <TextField label="Email" autoComplete="off" name = "email" type="email" 
+          placeholder = "UserEmail"
           value={email} 
           onChange ={ (value) => setEmail(value)} /><br/>
           <TextField label="Password" autoComplete="off" name = "password" type="password" 
+          placeholder = "Password"
           value={password} 
           onChange ={ (value) => setPassword(value)} />
        </div> 
