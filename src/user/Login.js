@@ -1,10 +1,9 @@
 import React from "react";
 import './Login.css';
-import  { useState} from 'react';
+// import  { useState} from 'react';
 import { Button, TextField ,Form, FormLayout } from "@shopify/polaris";
 
-/*
-  //  # Using class component Login page.
+  // Using Class Component  
 
 class Login extends React.Component {
   constructor(props){
@@ -75,9 +74,11 @@ class Login extends React.Component {
     );
   }
 } 
-*/
 
 
+/*
+    // This is function Component
+    
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -158,5 +159,6 @@ const Login = () => {
     </div>
     );
 }
+*/
 
 export default Login;
