@@ -33,12 +33,12 @@ class Login extends React.Component {
     }
   }
    onSubmit = (event) => {
-    const emal = this.emailValidation();
-    const pass = this.passwordValidation();
-    if(!emal) {
+    const email = this.emailValidation();
+    const password = this.passwordValidation();
+    if(!email) {
       alert('Email is not Valid and not proper format')
     }
-    else if(!pass) {
+    else if(!password) {
       alert('Password is not Valid because minumum six inputs are allowed. ')
     }
     else {
