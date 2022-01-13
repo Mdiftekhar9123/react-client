@@ -1,0 +1,41 @@
+.Textfield{
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: deepskyblue;
+
+}
+.formLayout {
+    background-color: cadetblue;
+    border-radius: 70px 25px;
+}
+.Polaris-Button{
+    padding: 12px 20px 12px 20px;
+    margin-left: 190px;
+    background-color: rgb(16, 17, 17);
+    display: inline-block;
+    color: white;
+    border-radius: 20px 5px ;
+}
+.form {
+    margin: 0 auto;
+    width: 40%;
+    padding-top: 50Px;
+}
+.heading{
+    padding-bottom: 25px;
+    padding-top: 25px;
+    font-size: 25px;
+    text-align: center;
+    font-family: cursive;
+    font-style:oblique;
+    color: rgb(22, 21, 21);
+}
+.err {
+    font-style:bold;
+    font-weight:normal;
+    color:lightcoral;
+}
+.Polaris-Label__Text {
+    font-style: italic
+}
