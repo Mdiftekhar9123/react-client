@@ -9,9 +9,14 @@
     background-color: cadetblue;
     border-radius: 70px 25px;
 }
-.Polaris-Button{
+.button {
     padding: 12px 20px 12px 20px;
-    margin-left: 190px;
+    margin-left: 200px;
+    display: inline-block;
+}
+.button .Polaris-Button{
+    padding: 12px 20px 12px 20px;
+    margin: 0 auto;
     background-color: rgb(16, 17, 17);
     display: inline-block;
     color: white;
@@ -38,4 +43,12 @@
 }
 .Polaris-Label__Text {
     font-style: italic
+}
+.das {
+padding-top: 20px;
+ text-align: center;
+ font-size: 30px;
+}
+.Polaris-Card {
+    margin: 40px 350px 50px 350px;
 }
