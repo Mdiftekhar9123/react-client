@@ -1,18 +1,18 @@
 const dummyData = [
     {
-        type : "admin",
+        type: "admin",
         email: "admin@gmail.com",
-        password:"Admin@123"
+        password: "Admin@123"
     },
     {
-        type : "user",
+        type: "user",
         email: "user@gmail.com",
-        password:"User@123"
+        password: "User@123"
     },
     {
-        type : "trainee",
+        type: "trainee",
         email: "trainee@gmail.com",
-        password:"Trainee@123"
+        password: "Trainee@123"
     },
 ]
 export default dummyData;

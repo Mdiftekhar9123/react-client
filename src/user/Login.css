@@ -39,7 +39,12 @@
 .err {
     font-style:bold;
     font-weight:normal;
-    color:lightcoral;
+    color:red;
+}
+.err2 {
+    text-align: center;
+    margin-top: 6cm;
+    font-size: 1cm;
 }
 .Polaris-Label__Text {
     font-style: italic
@@ -51,4 +56,7 @@ padding-top: 20px;
 }
 .Polaris-Card {
     margin: 40px 350px 50px 350px;
+}
+.Polaris-Label__Text{
+    font-size: 1.2rem;
 }
