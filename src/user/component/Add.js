@@ -31,7 +31,7 @@ const Add = (props) => {
                                 value = {book}
                                 onChange ={ (value) => setBook(value)}/>
                                 <TextField label="Author-Name" autoComplete="off" align="left" type="string" 
-                                placeholder = "Type here Author Name"
+                                placeholder = "Type here Book Name"
                                 value = {author}
                                 onChange ={ (value) => setAuthor(value)}/>
                                 <TextField label="Price" autoComplete="off" align="left" type="string" 
