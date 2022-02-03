@@ -20,6 +20,8 @@ const Admin = () => {
   const handleChange = useCallback(() => setActive(!active), [active]);
   const handleChangeEdit = useCallback(() => setActiveEdit(!activeEdit), [activeEdit]);
   const handleChangeDelete = useCallback(() => setActiveDelete(!activeDelete), [activeDelete]);
+
+  
   return (
     <div className="books">
       <Card title="Admin dashboard" sectioned>
@@ -34,6 +36,8 @@ const Admin = () => {
           renderItem={(item) => {
             const { id, img, name, Author, price } = item;
             const media = <Avatar source={img} customer size="medium" name={name} />;
+
+
             return (
               <div>
                 <ResourceItem
@@ -64,4 +68,5 @@ const Admin = () => {
     </div>
   )
 }
+
 export default Admin;

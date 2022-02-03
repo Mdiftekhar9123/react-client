@@ -12,7 +12,9 @@ import Trainee from "../user/role/Trainee";
 import User from "../user/role/User";
 import TopBarHeader from "../header/Header";
 
-const Routess = () => {
+
+const Router = () => {
+
     return (
         <BrowserRouter>
             <TopBarHeader />
@@ -27,4 +29,4 @@ const Routess = () => {
         </BrowserRouter>
     );
 }
-export default Routess;
+export default Router;

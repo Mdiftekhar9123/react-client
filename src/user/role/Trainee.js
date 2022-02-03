@@ -8,6 +8,8 @@ import {
   TextStyle
 } from "@shopify/polaris";
 import books from "../../data/book/Book";
+
+
 const Trainee = () => {
   const [selectedItems, setSelectedItems] = useState([]);
 
@@ -15,6 +17,8 @@ const Trainee = () => {
     singular: "book",
     plural: "books"
   };
+
+
   return (
     <Card title="Welcome to Trainee Page" sectioned>
       <p> Trainee can read the action only. </p>
@@ -31,6 +35,7 @@ const Trainee = () => {
   function renderItem(item) {
     const { id, img, name, Author, price } = item;
     const media = <Avatar source={img} customer size="medium" name={name} />;
+
 
     return (
       <ResourceItem
@@ -51,4 +56,5 @@ const Trainee = () => {
     );
   }
 }
+
 export default Trainee;

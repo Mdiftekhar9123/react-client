@@ -1,7 +1,11 @@
 import { Modal } from "@shopify/polaris";
 import React from "react";
+
+
 const Delete = (props) => {
   const { active, handleChange } = props;
+
+
   return (
     <div>
       <Modal
@@ -26,4 +30,5 @@ const Delete = (props) => {
     </div>
   );
 }
+
 export default Delete;

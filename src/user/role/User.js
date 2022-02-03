@@ -11,6 +11,7 @@ import {
 import books from "../../data/book/Book";
 import Add from "../component/Add";
 
+
 const User = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [active, setActive] = useState(false);
@@ -20,6 +21,8 @@ const User = () => {
     singular: "book",
     plural: "books"
   };
+
+
   return (
     <Card title="Welcome to User Page" sectioned>
       <p> User can Add the action only. </p>
@@ -33,9 +36,11 @@ const User = () => {
       />
     </Card>
   );
+
   function renderItem(item) {
     const { id, img, name, Author, price } = item;
     const media = <Avatar source={img} customer size="medium" name={name} />;
+
 
     return (
       <ResourceItem
@@ -58,4 +63,5 @@ const User = () => {
     );
   }
 }
+
 export default User;

@@ -3,7 +3,8 @@ import { TopBar } from '@shopify/polaris';
 import { useNavigate } from 'react-router';
 
 
-export default function TopBarHeader() {
+
+const TopBarHeader = () =>{
     const navigate = useNavigate();
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
     const toggleIsUserMenuOpen = useCallback(
@@ -22,6 +23,8 @@ export default function TopBarHeader() {
     const handleuser = () => {
         navigate('/user');
     }
+
+
     const userMenuMarkup = (
         <TopBar.UserMenu
             actions={[
@@ -40,6 +43,8 @@ export default function TopBarHeader() {
             onToggle={toggleIsUserMenuOpen}
         />
     );
+
+
     const topBarMarkup = (
         <TopBar
             showNavigationToggle
@@ -47,9 +52,13 @@ export default function TopBarHeader() {
             onNavigationToggle={handleNavigationToggle}
         />
     );
+
+
     return (
         <div style={{ height: '90px' }}>
             {topBarMarkup}
         </div>
     );
 }
+
+export default TopBarHeader

@@ -64,6 +64,8 @@ const Login = () => {
       });  
     } 
   }
+
+
     return(
     <div className = 'form'>
     <div className = 'formLayout'>
@@ -92,7 +94,10 @@ const Login = () => {
     </div>
     );
 }
+
 export default Login;
+
+
 
   // Using Class Component  
 /*
@@ -139,6 +144,8 @@ class Login extends React.Component {
     }
    }
   render(){
+
+
     return(
       <div className = 'form'>
       <div className = 'formLayout'>
