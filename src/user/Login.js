@@ -1,10 +1,106 @@
 import React from "react";
 import './Login.css';
-// import  { useState} from 'react';
+import  { useState} from 'react';
+import { useNavigate } from "react-router";
 import { Button, TextField ,Form, FormLayout } from "@shopify/polaris";
+import dummyData from "../data/login";
+
+
+    // This is function Component
+    
+const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    const navigate = useNavigate();
+    const emailValidation = () => {
+      const REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(email === "") {
+        setEmailError("email is required")
+      }
+      else if(email.match(REGEX)){
+        setEmailError("")
+      }
+      else {
+        setEmailError("please Enter valid Email")
+      }
+    }
+
+   const passwordErrorValidation = () => {
+     if(password === ""){
+       setPasswordError('Password is required')
+     }
+     else {
+       setPasswordError("")
+     }
+   } 
+  const passwordValidation = () => {
+      const REGEX = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$";
+      if(password.match(REGEX)) {
+        return true;
+      } 
+      else {
+        return false;
+      }
+    
+    }
+    const onSubmit = () => {
+      const passwordResult = passwordValidation();
+      if(emailError !== "") {
+        alert('Email is not Valid and not proper format read the instruction carefully.')
+      }
+      else if(!passwordResult) {
+        alert('Password is not Valid because minumum six inputs are allowed. ')
+      }
+      else {
+      dummyData.forEach(data => {
+       if(data.email === email && data.password === password) {
+        setEmail('');
+        setPassword('');
+        navigate('/Dashboard')
+
+       } 
+      });  
+    } 
+  }
+
+
+    return(
+    <div className = 'form'>
+    <div className = 'formLayout'>
+    <h1 className = 'heading'> Welcome to My login Page  </h1>
+    <Form onSubmit = {onSubmit}>
+      <FormLayout >
+      
+      <div className = 'Textfield'>
+          <TextField label="Email" autoComplete="off" name = "email" type="email" 
+          placeholder = "UserEmail"
+          value={email} 
+          onChange ={ (value) => setEmail(value)} onBlur = {emailValidation}/><br/>
+          <span className = "err">{emailError}</span>         
+          <TextField label="Password" autoComplete="off" name = "password" type="password" 
+          placeholder = "Password"
+          value={password} 
+          onChange ={ (value) => setPassword(value)} onBlur = {passwordErrorValidation}/>
+          <span className = "err">{passwordError}</span>
+       </div> 
+       <div className = 'button'>
+        <Button submit>Login</Button>
+       </div> 
+     </FormLayout>
+    </Form>
+    </div>
+    </div>
+    );
+}
+
+export default Login;
+
+
 
   // Using Class Component  
-
+/*
 class Login extends React.Component {
   constructor(props){
     super(props);
@@ -48,6 +144,8 @@ class Login extends React.Component {
     }
    }
   render(){
+
+
     return(
       <div className = 'form'>
       <div className = 'formLayout'>
@@ -74,91 +172,5 @@ class Login extends React.Component {
     );
   }
 } 
-
-
-/*
-    // This is function Component
-    
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
-
-    const emailValidation = () => {
-      const REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if(email === "") {
-        setEmailError("email is required")
-      }
-      else if(email.match(REGEX)){
-        setEmailError("")
-      }
-      else {
-        setEmailError("please Enter valid Email")
-      }
-    }
-
-   const passwordErrorValidation = () => {
-     if(password === ""){
-       setPasswordError('Password is required')
-     }
-     else {
-       setPasswordError("")
-     }
-   } 
-  const passwordValidation = () => {
-      const REGEX = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$";
-      if(password.match(REGEX)) {
-        return true;
-      } 
-      else {
-        return false;
-      }
-    
-    }
-    const onSubmit = () => {
-      const password = passwordValidation();
-      if(emailError !== "") {
-        alert('Email is not Valid and not proper format read the instruction carefully.')
-      }
-      else if(!password) {
-        alert('Password is not Valid because minumum six inputs are allowed. ')
-      }
-      else {
-        window.alert("email:"+ email + "  password: " + password);
-        setEmail('');
-        setPassword('');
-        } 
-    }
-    return(
-    <div className = 'form'>
-    <div className = 'formLayout'>
-    <h1 className = 'heading'> Welcome to My login Page  </h1>
-    <Form onSubmit = {onSubmit}>
-      <FormLayout >
-      
-      <div className = 'Textfield'>
-          <TextField label="Email" autoComplete="off" name = "email" type="email" 
-          placeholder = "UserEmail"
-          value={email} 
-          onChange ={ (value) => setEmail(value)} onBlur = {emailValidation}/><br/>
-          <span className = "err">{emailError}</span>         
-          <TextField label="Password" autoComplete="off" name = "password" type="password" 
-          placeholder = "Password"
-          value={password} 
-          onChange ={ (value) => setPassword(value)} onBlur = {passwordErrorValidation}/>
-          <span className = "err">{passwordError}</span>
-       </div> 
-       <div className = 'button'>
-        <Button submit>Login</Button>
-       </div> 
-       
-     </FormLayout>
-    </Form> 
-    </div>
-    </div>
-    );
-}
-*/
-
 export default Login;
+*/
