@@ -4,8 +4,7 @@ const Error = () => {
 
   return (
     <div className="err2">
-      <h1> 404 </h1> <br />
-      <h2>Not Found !</h2>
+      <h1> 404 Not Found !</h1> 
     </div>
   )
 }

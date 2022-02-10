@@ -4,13 +4,15 @@ import { useNavigate } from 'react-router';
 
 
 
-const TopBarHeader = () =>{
+const TopBarHeader = () => {
+
     const navigate = useNavigate();
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
     const toggleIsUserMenuOpen = useCallback(
         () => setIsUserMenuOpen((isUserMenuOpen) => !isUserMenuOpen),
         [],
     );
+    
     const handleNavigationToggle = useCallback(() => {
         console.log('toggle navigation visibility');
     }, []);

@@ -3,6 +3,8 @@
 // import User from "../user/role/User";
 // import Trainee from "../user/role/Trainee";
 
+import React from "react";
+
 const Dashboard = () => {
     /*
     const [adminn , setAdmin] = useState('');
@@ -10,7 +12,7 @@ const Dashboard = () => {
     const [trainees , setTrainee] = useState('');
 */
     return(
-        <div>
+        <React.Fragment>
           <h1 className = 'das'>Welcome to Dashboard page</h1>
          {/* <button onClick = { () => {setAdmin('true'); setUser('false');setTrainee('false')}} >Admin</button>&nbsp;&nbsp;&nbsp;&nbsp;
           <button onClick = { () => {setAdmin('false'); setUser('true');setTrainee('false')}} >User</button>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -20,7 +22,7 @@ const Dashboard = () => {
             {users === 'true' && <User/>}
             {trainees === 'true' && <Trainee/>}
     */} 
-        </div>
+       </React.Fragment>
     );
 }
 
